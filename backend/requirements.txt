@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+python-multipart
+Pillow
+ultralytics
+torch
+torchvision
+huggingface-hub
+opencv-python 
+supervision 
+reportlab 
+flask_cors
+flask
+moviepy
