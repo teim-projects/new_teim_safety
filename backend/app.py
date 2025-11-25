@@ -25,7 +25,7 @@ app = FastAPI(title="PPE Detection + Auth API", version="2.0")
 # ==========================================================
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],          # allow all domains
+    allow_origins=["*",'teimsafety.com'],          # allow all domains
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -160,7 +160,7 @@ def convert_avi_to_mp4(input_path: str) -> str:
 # ==========================================================
 # PPE Detection Route
 # ==========================================================
-@app.post("/predict/")
+@app.post("/api/predict/")
 async def predict(file: UploadFile = File(...)):
     try:
         upload_path = f"static/uploads/{file.filename}"
@@ -377,7 +377,7 @@ def convert_avi_to_mp4(input_path: str) -> str:
 # ==========================================================
 # PPE Detection Route
 # ==========================================================
-@app.post("/predict/")
+@app.post("/api/predict/")
 async def predict(file: UploadFile = File(...)):
     try:
         upload_path = f"static/uploads/{file.filename}"
@@ -594,7 +594,7 @@ def convert_avi_to_mp4(input_path: str) -> str:
 # ==========================================================
 # PPE Detection Route
 # ==========================================================
-@app.post("/predict/")
+@app.post("/api/predict/")
 async def predict(file: UploadFile = File(...)):
     try:
         upload_path = f"static/uploads/{file.filename}"
@@ -811,7 +811,7 @@ def convert_avi_to_mp4(input_path: str) -> str:
 # ==========================================================
 # PPE Detection Route
 # ==========================================================
-@app.post("/predict/")
+@app.post("/api/predict/")
 async def predict(file: UploadFile = File(...)):
     try:
         upload_path = f"static/uploads/{file.filename}"
@@ -1028,7 +1028,7 @@ def convert_avi_to_mp4(input_path: str) -> str:
 # ==========================================================
 # PPE Detection Route
 # ==========================================================
-@app.post("/predict/")
+@app.post("/api/predict/")
 async def predict(file: UploadFile = File(...)):
     try:
         upload_path = f"static/uploads/{file.filename}"

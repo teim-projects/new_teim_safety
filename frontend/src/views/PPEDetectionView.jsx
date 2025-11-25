@@ -47,27 +47,34 @@ const PPEDetectionView = () => {
       setLoading(true);
       setProgress(30); // Initial progress state
 
-      const res = await axios.post("http://127.0.0.1:8000/predict/", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-        onUploadProgress: (progressEvent) => {
-          const percent = Math.round(
-            (progressEvent.loaded * 100) / progressEvent.total
-          );
-          setProgress(percent);
-        },
-      });
+    const res = await axios.post("http://teimsafety.com/api/predict/", formData, {
+
+  headers: { "Content-Type": "multipart/form-data" },
+  onUploadProgress: (progressEvent) => {
+    const percent = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+    setProgress(percent);
+  },
+});
+
 
       setProgress(90); // Close to completion
 
       const data = res.data;
       setDetections(data.detections || []);
       setSummary(data.summary || {});
-      if (data.original_image) {
-        setOriginalMedia(`http://127.0.0.1:8000${data.original_image}`);
-      }
-      if (data.annotated_image) {
-        setAnnotatedMedia(`http://127.0.0.1:8000${data.annotated_image}`);
-      }
+     
+
+const BASE = "http://teimsafety.com";
+
+if (data.original_image) {
+  setOriginalMedia(`${BASE}${data.original_image}`);
+}
+
+if (data.annotated_image) {
+  setAnnotatedMedia(`${BASE}${data.annotated_image}`);
+}
+
+
 
       setProgress(100);
     } catch (err) {
@@ -250,3 +257,4 @@ const PPEDetectionView = () => {
 };
 
 export default PPEDetectionView;
+

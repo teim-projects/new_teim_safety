@@ -1,5 +1,28 @@
-/venv
-/node_modules
-/venv310
-**/__pycache__/
+# Python / Backend
+backend/__pycache__/
+backend/*.pyc
+backend/static/uploads/
+backend/static/detections/
+backend/users.db
+backend/venv/
+*.py[cod]
+*.pyo
+
+# YOLO weights (should not be pushed)
+backend/weights/*.pt
+
+# FastAPI Logs
+*.log
+
+# Frontend
+frontend/node_modules/
+frontend/build/
+frontend/.env
+
+# Global
+__pycache__/
+venv/
+.env
+*.log
+.DS_Store
 

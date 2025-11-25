@@ -1,10 +1,12 @@
+
 // src/views/CheckView.jsx
 
 import React, { useState, useEffect } from 'react';
 import { Camera, Image as ImageIcon, Download, Mail } from 'lucide-react'; 
 import emailjs from '@emailjs/browser'; // EmailJS import
 
-const API_ENDPOINT = 'http://127.0.0.1:8000/api/check_ppe_image/'; // YOLO API
+const API_ENDPOINT = 'http://teimsafety.com/api/predict/';
+ // YOLO API
 
 const CheckView = ({ checkType }) => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -256,3 +258,5 @@ const CheckView = ({ checkType }) => {
 };
 
 export default CheckView;
+
+
