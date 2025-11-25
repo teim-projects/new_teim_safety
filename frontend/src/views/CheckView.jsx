@@ -4,8 +4,10 @@
 import React, { useState, useEffect } from 'react';
 import { Camera, Image as ImageIcon, Download, Mail } from 'lucide-react'; 
 import emailjs from '@emailjs/browser'; // EmailJS import
+import { API_BASE } from "../config"
 
-const API_ENDPOINT = 'http://teimsafety.com/api/predict/';
+
+const API_ENDPOINT = `${API_BASE}/predict/`;
  // YOLO API
 
 const CheckView = ({ checkType }) => {

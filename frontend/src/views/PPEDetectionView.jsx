@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
 import Webcam from "react-webcam";
+import { API_BASE } from "../config";
 
 const PPEDetectionView = () => {
   const [file, setFile] = useState(null);
@@ -47,7 +48,7 @@ const PPEDetectionView = () => {
       setLoading(true);
       setProgress(30); // Initial progress state
 
-    const res = await axios.post("http://teimsafety.com/api/predict/", formData, {
+    const res = await axios.post(`${API_BASE}/predict/`, formData, {
 
   headers: { "Content-Type": "multipart/form-data" },
   onUploadProgress: (progressEvent) => {

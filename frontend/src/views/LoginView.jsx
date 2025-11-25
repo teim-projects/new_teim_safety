@@ -1,5 +1,6 @@
 // src/views/LoginView.jsx
 import React, { useState } from 'react';
+import { API_BASE } from "../config";
 
 const LoginView = ({ onNavigate, onLoginSuccess }) => {
   const [email, setEmail] = useState('');
@@ -25,7 +26,7 @@ const LoginView = ({ onNavigate, onLoginSuccess }) => {
 
     try {
       // Send login request to backend
-      const response = await fetch("http://teimsafety.com/api/login", {
+      const response = await fetch(`${API_BASE}/login`, {
 
 
 

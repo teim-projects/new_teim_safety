@@ -1,5 +1,6 @@
 // src/views/SignupView.jsx
 import React, { useState } from 'react';
+import { API_BASE } from "../config";
 
 const SignupView = ({ onNavigate }) => {
   const [name, setName] = useState('');
@@ -23,7 +24,7 @@ const SignupView = ({ onNavigate }) => {
     }
 
     try {
-      const response = await fetch("http://teimsafety.com/api/signup", {
+      const response = await fetch(`${API_BASE}/signup`, {
 
 
         method: 'POST',
